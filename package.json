@@ -1,0 +1,23 @@
+{
+  "name": "bullet_journal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch assets/styles/index.scss:assets/styles/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annesophie55/bullet.git"
+  },
+  "author": "A.S. Jackowska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Annesophie55/bullet/issues"
+  },
+  "homepage": "https://github.com/Annesophie55/bullet#readme",
+  "dependencies": {
+    "sass": "^1.75.0"
+  }
+}
