@@ -28,11 +28,6 @@ export function updateTodo(newTodo) {
 
 });}
 
-const ui = {
-  updateTodo,
-};
-
-export default ui;
 
 
 

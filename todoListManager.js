@@ -3,7 +3,7 @@
 // Supprimer une tâche existante.
 // Marquer une tâche comme complétée.
 // Sauvegarder l'état actuel des tâches (dans le stockage local du navigateur ou sur un serveur distant). Pensez à génerer une id unique
-
+import { seedTodo } from "./data/todoData.js";
 
 class Todo {
 
@@ -18,10 +18,13 @@ class Todo {
 }
 
 export function addTodo(newTodo) {
+
   let todo = new Todo(undefined, newTodo);
   let todos = [];
   todos = JSON.parse(localStorage.getItem('todos')) || [];
   todos.push(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
-}
 
+  //enregistement des todo dans la base restapi de dyma
+  seedTodo(todos);
+}
