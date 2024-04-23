@@ -1,2 +1,6 @@
-import { TodoList } from './todoListManager.js';
-import { Ui } from './ui.js'
+
+import { updateTodo } from './ui.js'
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  updateTodo();
+});

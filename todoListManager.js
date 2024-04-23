@@ -7,10 +7,21 @@
 
 class Todo {
 
-  constructor(id= crypto.randomUUID(), content, status, createdAt = new Date()) {
+  constructor(id= crypto.randomUUID(), content, status = false, createdAt = new Date(), type) {
     this.id = id,
     this.content = content,
     this.status = status,
-    this.createdAt = createdAt;
+    this.createdAt = createdAt,
+    this.type = type;
   }
+
 }
+
+export function addTodo(newTodo) {
+  let todo = new Todo(undefined, newTodo);
+  let todos = [];
+  todos = JSON.parse(localStorage.getItem('todos')) || [];
+  todos.push(todo);
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
