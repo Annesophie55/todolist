@@ -9,6 +9,29 @@
 //il faut que j'essai d'abord de récupérer les todos 
 
 import { addTodo } from './todoListManager.js';
+import { fetchTodo } from './data/todoData.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchTodo().then(todos => {
+
+    todos[0].forEach(element => {
+      console.log(element);
+      const todoListItem = document.createElement('li');
+      todoListItem.textContent = element.content;
+
+      const checkIcon = document.createElement('i');
+      checkIcon.className = 'fa-solid fa-check';
+
+      todoListItem.appendChild(checkIcon);
+
+      const todoList = document.getElementById('todo_list');
+      todoList.appendChild(todoListItem);
+    });
+  }).catch(error => {
+    console.error('Erreur lors de la récupération des tâches', error);
+  })
+});
+
 
 export function updateTodo(newTodo) {
   document.getElementById('addTodo').addEventListener('click', (e)=>{

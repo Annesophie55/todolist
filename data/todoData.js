@@ -11,12 +11,18 @@ export async function seedTodo(todos) {
 }
 
 
-// export async function fetchTodo() {
-
-//   let todos = [];
+export async function fetchTodo() {
 
 
+  try{
+    const response = await fetch(BASE_URL_API);
 
-
-
-// }
+    if(response.ok) {
+      const todos = [await response.json()];
+      return todos;
+    }
+  }
+  catch (e) {
+    console.log('erreur lors de la récupération des tâches !');
+  }
+}
